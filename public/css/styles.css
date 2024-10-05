@@ -1,0 +1,1237 @@
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  text-transform: capitalize;
+  font-family: "Poppins", serif;
+}
+header{
+  position: relative;
+  padding: 2em 0;
+  /* background-image: url(banner.jpg); */
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
+
+}
+.logo{
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.navbar{
+  width: 100%;
+  padding: 2rem 4rem;
+  height: 90px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  top: 0;
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+}
+.navbar.scrolled{
+  background-color: #d6d6d6;
+  box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+  padding: 0.8rem 4rem;
+}
+.nav_items{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.nav_items li{
+  list-style: none;
+  padding: 1em;
+}
+.nav_items li a{
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+.nav_items li::before{
+  content: '';
+  height: 2px;
+  width: 0%;
+  background: black;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav_items li:hover::before{
+  width: 100%;
+}
+
+.nav_btns{
+  padding: 12px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+/* From Uiverse.io by mrhyddenn */ 
+.btnsignin{
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: black;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    text-decoration: none;
+  }
+
+  .btnsignin a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .btnsignin a:hover{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+  
+  .btnsignin:hover {
+    background: rgb(0, 0, 0);
+    box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  
+  .btnsignin:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+  .btnsignin::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  .btnsignin:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+  /* signup */
+  .btnsignup{
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-right: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    text-decoration: none;
+  }
+
+  .btnsignup a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .btnsignup a:hover{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+  
+  .btnsignup:hover {
+    background: rgb(0, 0, 0);
+    box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  
+  .btnsignup:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+  .btnsignup::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  .btnsignup:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+
+  .back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  @media(min-aspect-ratio:16/9){
+    .back-video{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @media(max-aspect-ratio:16/9){
+    .back-video{
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .btnmain{
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .btnmain a{
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .btnmain2{
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+
+  .btnmain2 a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .btnmain2 a:hover{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+  
+  .btnmain2:hover {
+    background: rgb(0, 0, 0);
+    box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  
+  .btnmain2:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+  .btnmain2::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  .btnmain2:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+
+
+  .btnmain1{
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: black;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    text-decoration: none;
+  }
+
+  .btnmain1 a {
+    color: #fff;
+  }
+
+  .btnmain1 a:hover{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+  
+  .btnmain1:hover {
+    background: rgb(0, 0, 0);
+    box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  
+  .btnmain1:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+  .btnmain1::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  .btnmain1:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+
+.main{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 6em 2em 2em 2em;
+  box-sizing: border-box;
+  width: 90%;
+  margin: auto;
+}
+
+.left h1 {
+  font-size: 3em;
+  font-weight: 600;
+  color: #000000;
+}
+
+.left p{
+  font-size: 14px;
+  line-height: 1.5rem;
+  padding: 2% 0;
+  
+}
+.right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right img {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* About Us */
+
+.us {
+  padding: 8% 0 5% 0;
+  width: 82%;
+  margin: auto;
+}
+
+.head{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0em 6em;
+  align-items: center;
+}
+
+.head .sub_heading,
+.head .heading {
+  grid-column: 2;
+  text-align: left;
+}
+
+.sub_heading {
+  color: #070707;
+  font-size: 1.7em;
+  font-weight: 700;
+}
+
+.heading {
+  font-size: 3em;
+  color: #030303;
+}
+
+.head .para {
+  grid-column: 1;
+  text-align: justify;
+  color: #777;
+  align-self: start; /* Posisikan lebih ke atas */
+  margin-top: -1em;
+}
+
+@media screen and (max-width: 768px) {
+  .head {
+      grid-template-columns: 1fr;
+      gap: 1em;
+  }
+
+  .head .sub_heading,
+  .head .heading,
+  .head .para {
+      grid-column: 1; /* Semuanya berada di kolom pertama */
+      text-align: center; /* Teks rata tengah untuk layar kecil */
+  }
+}
+
+.boxes {
+  margin-top: 4rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.box{
+  text-align: center;
+}
+
+.box i{
+  display: inline-block;
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+  padding: 10px 17px;
+  color: #0f0f0f;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  border: 4px solid #777;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+.box h4{
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.box:hover span, .right_box li:hover span{
+  padding: 14px 21px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #082567, #0071c5);
+}
+
+
+/* Service */
+
+.head_1{
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}
+.para{
+  color: #777;
+}
+.head_1 .heading{
+  padding: 15px 0;
+}
+.Service_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.Service_box li{
+  list-style: none;
+}
+.left_box p{
+  font-size: 14px;
+  padding: 15px 0;
+  line-height: 1.5;
+  color: #777;
+}
+.left_box li{
+  padding: 15px 0;
+}
+.left_box li i{
+  color: #fff;
+  padding: 1px;
+  background: black;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.left_box button{
+  margin-top: 2em;
+}
+.right_box li{
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  margin: 2% 0;
+}
+.right_box h4{
+  font-size: 19px;
+}
+.right_box p{
+  font-size: 15px;
+  padding-top: 12px;
+  color: #777;
+}
+
+.product{
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.product-category{
+  padding: 0 10vw;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+}
+
+.product-container{
+  padding: 0 10vw;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.product-container::-webkit-scrollbar{
+  display: none;
+}
+
+.product-card{
+  flex: 0 0 auto;
+  width: 250px;
+  height: 450px;
+  margin-right: 40px;
+}
+
+.product-image{
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.product-thumb{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discount-tag{
+  position: absolute;
+  background: #000;
+  padding: 5px;
+  border-radius: 5px;
+  color: #f0f0f0;
+  right: 10px;
+  top: 10px;
+  text-transform: capitalize;
+}
+
+.card-btn{
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  width: 90%;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  background: #fff ;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.product-card:hover .card-btn{
+  opacity: 1;
+}
+
+.card-btn:hover{
+  background: #000000;
+  color: #fff;
+}
+
+.product-info{
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.product-brand{
+  text-transform: uppercase;
+
+}
+
+.product-desc{
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  opacity: 0.5;
+  text-transform: capitalize;
+  margin: 5px 0;
+
+
+}
+
+.price{ 
+  text-decoration: none;
+  
+}
+
+.pre-btn,
+.nxt-btn{
+  border: none;
+  width: 10vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient();
+  cursor: pointer;
+  z-index: 9;
+
+}
+
+.pre-btn{
+  left: 0;
+  background-color: transparent;
+}
+
+.nxt-btn {
+  right: 0;
+  background-color: transparent;
+}
+
+.pre-btn i,
+.nxt-btn i {
+  opacity: 0.2;
+}
+
+.pre-btn:hover i,
+.nxt-btn:hover i {
+  opacity: 1;
+}
+
+.collection.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.collection {
+  position: relative;
+}
+
+.collection img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  background: rgba(0, 113, 197, 0.5); /* Warna transparan biru laut */
+}
+
+.collection:nth-child(3) {
+  grid-column: span 2;
+  margin-bottom: 10px;
+}
+
+/* Routes */
+
+/* Styles for the route section */
+.route {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.head_1 {
+  margin-bottom: 40px;
+}
+
+.head_1 .sub_heading {
+  font-size: 18px;
+  color: black;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.head_1 .heading {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.boxes_1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.box_1 {
+  background-color: #ffffff;
+  width: 250px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.box_1:hover {
+  color: #777;
+}
+
+.box_1 span {
+  display: block;
+  font-size: 50px;
+  color: #00b4db;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.box_1 h4 {
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.box_1:hover span {
+  color: #f0f0f0;
+}
+
+.box_1::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: 0;
+  left: -50%;
+  transform: rotate(45deg);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.box_1:hover::before {
+  left: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .boxes_1 {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .box_1 {
+      width: 100%;
+      max-width: 400px;
+  }
+}
+
+/* ___________contact */
+/* Gaya untuk kontainer utama */
+.contact {
+  background: #fff; /* Warna latar belakang */
+  padding: 5% 0;
+  width: 100%;
+  border-radius: 10px; /* Membuat sudut yang lebih halus */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+}
+
+/* Kontainer untuk info dan form kontak */
+.contact_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+/* Gaya untuk bagian info kontak */
+.contact_info {
+  flex: 1;
+  margin-right: 2rem;
+  color: #333;
+}
+
+.contact_info h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: black; /* Warna teks heading */
+  font-weight: 700;
+}
+
+.contact_info p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.contact_details {
+  margin-top: 1rem;
+}
+
+.detail_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.detail_item i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: black; /* Warna ikon */
+}
+
+.detail_item span {
+  font-size: 1rem;
+}
+
+/* Gaya untuk form kontak */
+.contact_form {
+  flex: 1;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact_form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_group {
+  margin-bottom: 1.5rem;
+}
+
+.form_group label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form_group input,
+.form_group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+  border-color: #0071c5; /* Warna border saat fokus */
+}
+
+textarea {
+  height: 120px;
+  resize: none; /* Menghilangkan resize */
+}
+
+/* Gaya untuk tombol kirim */
+button[type="submit"] {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: black;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: black; /* Warna saat hover */
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+  .contact_container {
+      flex-direction: column;
+  }
+
+  .contact_info,
+  .contact_form {
+      margin: 1rem 0;
+  }
+}
+
+
+/* ___________footer */
+/* Container utama untuk footer */
+.footer_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background-color: #f1f1f1; /* Warna latar belakang footer */
+}
+
+/* Gaya untuk setiap kolom di footer */
+.footer_col {
+  flex: 1;
+  margin: 1rem;
+  min-width: 200px; /* Lebar minimum untuk setiap kolom */
+}
+
+/* Gaya untuk heading (h4) */
+.footer_col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+/* Gaya untuk daftar item di footer */
+.footer_col ul {
+  list-style-type: none; /* Menghapus bullet pada daftar */
+  padding: 0;
+}
+
+.footer_col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer_col ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+}
+
+.footer_col ul li a:hover {
+  color: #0071c5; /* Warna hover untuk tautan */
+}
+
+/* Gaya untuk bagian kontak dan sosial */
+.footer_col p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.social_links a {
+  font-size: 1.5rem;
+  color: #333;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.social_links a:hover {
+  color: #0071c5; /* Warna hover untuk ikon sosial media */
+}
+
+/* Gaya untuk bagian bawah footer */
+.footer_bottom {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+  .footer_container {
+      flex-direction: column; /* Kolom-kolom di footer menjadi vertikal */
+      align-items: center; /* Pusatkan konten */
+  }
+  
+  .footer_col {
+      margin: 1rem 0; /* Margin vertikal untuk tiap kolom */
+      text-align: center; /* Pusatkan teks */
+  }
+
+  .social_links {
+      display: flex;
+      justify-content: center; /* Pusatkan tautan sosial media */
+  }
+}
+
+
+
+
+/* __________responsive */
+@media only screen and (max-width:920px){
+  .main{
+      width: 95%;
+  }
+  .left h1{
+      font-size: 2.7em;
+  }
+  .navbar {
+      padding: 2rem 2rem
+  }
+  .sec{
+      width: 90%;
+  }
+}
+@media only screen and (max-width:820px){
+.nav_items{
+  position: absolute;
+  top: -1%;
+  left: 0%;
+  width: 100%;
+  padding: 5em 0em 2em 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 0.2rem;
+  background-color: #d6d6d6;
+  transition: 0.5s;
+  z-index: -1;
+  transform: translateY(-100%);
+}
+.nav_items.open{
+  transform: translateY(0);
+}
+.nav_menu{
+  display: block;
+  font-size: 2em;
+}
+.nav_btns{
+  display: none;
+}
+.main,.head,.Service_box {
+  grid-template-columns:  1fr;
+}
+.head_1 {
+  width: 95%;
+}
+.head .para{
+  grid-column: 1;
+}
+.boxes{
+  grid-template-columns: repeat(2, 1fr);
+}
+.boxes_1 img{
+  opacity: 0.4;
+}
+.footer{
+  grid-template-columns: repeat(3, 1fr);
+}
+}
+@media only screen and (max-width:680px){
+  .boxes{
+      grid-template-columns: repeat(1, 1fr);
+  }
+  .route{
+      width: 100%;
+  }
+  .footer_bar{
+      flex-direction: column;
+      text-align: center;
+  }
+  .footer{
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width:465px){
+.left h1{
+  font-size: 2em;
+}
+.heading{
+  font-size: 2.5em;
+}
+.main{
+  width: 100%;
+}
+.box_1{
+  width: 100px;
+}
+.boxes_1 img{
+  width: 300px;
+  padding: 5em 0;
+}
+.box_2 input,.box_2 button{
+  width: 70%;
+}
+.box_2 button{
+  margin-top: 2%;
+}
+.footer{
+  grid-template-columns: repeat(1, 1fr);
+}
+}
