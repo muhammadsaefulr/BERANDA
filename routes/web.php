@@ -9,6 +9,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\UserCustomerAuthController;
 
 Route::get('/', function () {
     return view('frontend.index');
@@ -21,6 +23,20 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// User Customer
+
+Route::prefix('user/auth')->group(function () {
+    Route::get('/signup', [UserCustomerAuthController::class, 'showSignupForm'])->name('user_customer.signup');
+    Route::post('/signup', [UserCustomerAuthController::class, 'signup']);
+
+    Route::get('/login', [UserCustomerAuthController::class, 'showLoginForm'])->name('user_customer.login');
+    Route::post('/login', [UserCustomerAuthController::class, 'login']);
+});
+
+Route::middleware(['auth:user_customer'])->group(function () {
+    Route::get('/user/dashboard', [DashboardUserController::class, 'index'])->name('user_customer.dashboard');
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -35,4 +51,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/reports', function () {
         return view('dashboard.reports');
     });
+});
+
+Route::get('/user', function () {
+    return view('user/user');
+});
+
+Route::get('/tracking', function () {
+    return view('user/tracking');
 });

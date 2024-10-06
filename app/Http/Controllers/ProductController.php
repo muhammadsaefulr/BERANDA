@@ -11,6 +11,11 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
+
+        if ($products->isEmpty()) {
+            $products = collect(); 
+        }
+
         return view('dashboard.products.index', compact('products'));
     }
 
@@ -29,15 +34,22 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'category' => 'required|string',
             'stock' => 'required|integer',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
-        // Create a new product
-        Product::create([
-            'name' => $request->name,
-            'price' => $request->price,
-            'category' => $request->category,
-            'stock' => $request->stock,
-        ]);
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->storeAs('public/images', $imageName);
+            
+            Product::create([
+                'name' => $request->name,
+                'price' => $request->price,
+                'category' => $request->category,
+                'stock' => $request->stock,
+                'image' => $imageName,
+            ]);
+        }
+
 
         return redirect()->route('products.index')->with('success', 'Product created successfully.');
     }

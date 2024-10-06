@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users - Warehouse</title>
+    <title>PT BERANDA - Warehouse</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" type="text/css" >
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -18,13 +18,13 @@
               <li><a href="#home">home</a></li>
               <li><a href="#aboutus">about</a></li>
               <li><a href="#services">services</a></li>
-              <li><a href="#footer">contact</a></li>
-              <li><a href="{{ url('/dashboard') }}">Admin</a></li>
+              <!-- <li><a href="#"></a></li> -->
+              <!-- <li><a href="{{ url('/dashboard') }}">Admin</a></li> -->
           </ul>
 
           <div class="nav_btns">
-          <a href="{{ url('/login') }}" class="btnsignin">Sign In</a>
-          <a href="{{ url('/signup') }}" class="btnsignup">Sign Up</a>
+          <a href="{{ url('/user/auth/signin') }}" class="btnsignin">Sign In</a>
+          <a href="{{ url('/user/auth/signup') }}" class="btnsignup">Sign Up</a>
           </div>
 
           <div class="nav_menu" id="menu_btn">
@@ -39,8 +39,11 @@
          <p>"Menggerakkan bisnis Anda dengan solusi logistik yang cepat, andal, dan efisien, karena kesuksesan Anda adalah prioritas kami."
          </p>
       <div class="btnmain">
-      <button class="btnmain1">Explore More</button>
-      <button class="btnmain2">Start Tracking</button>
+      <!-- <button class="btnmain1">Explore More</button>
+      <button class="btnmain2">Start Tracking</button> -->
+      <br>
+      <a href="{{ url('/signup') }}" class="btnmain1">Explore More</a>
+      <!-- <a href="{{ url('/login') }}" class="btnmain2">Start Tracking</a> -->
       </div>
          </div>
       <div class="right">
@@ -52,7 +55,7 @@
         <div class="head">
           <h3 class="sub_heading">About Us</h3>
           <p class="para">
-            Selamat datang di SIGAP, mitra terpercaya dalam menyediakan solusi logistik yang efisien dan inovatif. Sejak didirikan, kami berkomitmen untuk membantu bisnis Anda bergerak lebih cepat, lebih jauh, dan lebih aman. Dengan jaringan distribusi yang luas dan tim profesional yang berpengalaman, kami siap menjadi bagian dari perjalanan kesuksesan Anda.
+            Selamat datang di PT.BERANDA, mitra terpercaya dalam menyediakan solusi logistik yang efisien dan inovatif. Sejak didirikan, kami berkomitmen untuk membantu bisnis Anda bergerak lebih cepat, lebih jauh, dan lebih aman. Dengan jaringan distribusi yang luas dan tim profesional yang berpengalaman, kami siap menjadi bagian dari perjalanan kesuksesan Anda.
           </p>
           <h1 class="heading">Solusi untuk kebutuhan bisnis anda</h1>
         </div>
@@ -83,8 +86,10 @@
      <!-- Service -->
      <section class="service" id="services">
       <div class="head_1">
-          <h3 class="sub_heading">Product and Service</h3>
+          <h3 class="sub_heading">Product</h3>
           <h1 class="heading">everything is ready to <br>transport</h1>
+          <br>
+          <a href="{{ url('/user') }}" class="btnmain1">Belanja Sekarang</a>
           <!-- <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ab nobis provident, voluptates dolor voluptas fugiat. Delectus nihil magnam quam, similique doloremque tempore sit fuga, ducimus quaerat, nemo cumque dicta?</p> -->
       </div>
       <section class="product">
@@ -98,7 +103,6 @@
                 <div class="product-image">
                     <span class="discount-tag">20% Off</span>
                     <img src="{{ asset('/images/pngflow.com-1.png') }}" class="product-thumb" alt="Product Image">
-                    <button class="card-btn">Add to Cart</button>
                 </div>
                 <div class="product-info">
                     <h2 class="product-brand">Brand</h2>
@@ -112,7 +116,6 @@
                 <div class="product-image">
                     <span class="discount-tag">20% Off</span>
                     <img src="{{ asset('/images/tepung.jpg') }}" class="product-thumb" alt="Product Image">
-                    <button class="card-btn">Add to Cart</button>
                 </div>
                 <div class="product-info">
                     <h2 class="product-brand">Brand</h2>
@@ -126,7 +129,6 @@
                 <div class="product-image">
                     <span class="discount-tag">20% Off</span>
                     <img src="{{ asset('/images/gula.jpeg') }}" class="product-thumb" alt="Product Image">
-                    <button class="card-btn">Add to Cart</button>
                 </div>
                 <div class="product-info">
                     <h2 class="product-brand">Brand</h2>
@@ -138,7 +140,6 @@
                 <div class="product-image">
                     <span class="discount-tag">20% Off</span>
                     <img src="{{ asset('/images/berasmerah.png') }}" class="product-thumb" alt="Product Image">
-                    <button class="card-btn">Add to Cart</button>
                 </div>
                 <div class="product-info">
                     <h2 class="product-brand">Brand</h2>
@@ -178,47 +179,6 @@
        <img src="" alt="">
   </div>
  </section>
- 
- <!-- Contact -->
- <!-- <section class="contact" id="contact">
-    <div class="contact_container">
-        <div class="contact_info">
-            <h2>Kontak Kami</h2>
-            <p>Kami siap membantu Anda dengan pertanyaan atau kebutuhan logistik Anda. Jangan ragu untuk menghubungi kami melalui formulir di bawah ini atau kunjungi kantor kami secara langsung.</p>
-            <div class="contact_details">
-                <div class="detail_item">
-                    <i class='bx bxs-map'></i>
-                    <span>Jl. Mawar No. 123, Jakarta, Indonesia</span>
-                </div>
-                <div class="detail_item">
-                    <i class='bx bxs-phone'></i>
-                    <span>(021) 123-4567</span>
-                </div>
-                <div class="detail_item">
-                    <i class='bx bxs-envelope'></i>
-                    <span>info@perusahaan.com</span>
-                </div>
-            </div>
-        </div>
-        <div class="contact_form">
-            <form>
-                <div class="form_group">
-                    <label for="name">Nama</label>
-                    <input type="text" id="name" name="name" placeholder="Masukkan nama Anda">
-                </div>
-                <div class="form_group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Masukkan email Anda">
-                </div>
-                <div class="form_group">
-                    <label for="message">Pesan</label>
-                    <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini"></textarea>
-                </div>
-                <button type="submit" class="btnsignin">Kirim Pesan</button>
-            </form>
-        </div>
-    </div>
-</section> -->
  <footer>
     <div class="footer_container">
         <div class="footer_col">
@@ -242,7 +202,7 @@
         <div class="footer_col">
             <h4>Hubungi Kami</h4>
             <p>Gedung Nani Kampus C UNAIR, Indonesia</p>
-            <p>Email: SIGAP@perusahaanlogistik.com</p>
+            <p>Email: PT.BERANDA@perusahaanlogistik.com</p>
             <p>Telepon: (021) 999-99987</p>
         </div>
         <div class="footer_col">
@@ -258,7 +218,7 @@
         </div>
     </div>
     <div class="footer_bottom">
-        <p>&copy; SIGAP. Semua Hak Dilindungi.</p>
+        <p>&copy; PT.BERANDA. Semua Hak Dilindungi.</p>
     </div>
 </footer>
       <script src="https://unpkg.com/scrollreveal"></script>
