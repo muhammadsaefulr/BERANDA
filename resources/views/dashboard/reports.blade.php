@@ -118,7 +118,6 @@
         }
     });
 
-    // Revenue Breakdown Chart
     var revenueCtx = document.getElementById('revenueChart').getContext('2d');
     var revenueChart = new Chart(revenueCtx, {
         type: 'line',

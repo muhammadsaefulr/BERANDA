@@ -8,9 +8,10 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
-    return view('frontend/index');
+    return view('frontend.index');
 });
 
 Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signup');
@@ -22,18 +23,16 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('category', CategoryController::class);
     Route::resource('products', ProductController::class);
     Route::resource('customers', CustomerController::class);
     Route::resource('supplier', SupplierController::class);
     Route::resource('orders', OrderController::class);
-    Route::resource('shippings', ShippingController::class);
+    Route::resource('shipping', ShippingController::class);
 
     Route::get('/reports', function () {
-        return view('dashboard/reports');
+        return view('dashboard.reports');
     });
 });

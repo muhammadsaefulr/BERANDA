@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Sidebar Menu Section -->
@@ -46,35 +48,35 @@
         <div class="dashboard-overview">
             <div class="overview-card">
                 <h3>Total Products</h3>
-                <p>1,234</p>
+                <p>{{ $totalProducts }}</p>
             </div>
             <div class="overview-card">
                 <h3>Total Orders</h3>
-                <p>3,456</p>
+                <p>{{ $totalOrders }}</p>
             </div>
             <div class="overview-card">
                 <h3>Pending Orders</h3>
-                <p>123</p>
+                <p>{{ $pendingOrders }}</p>
             </div>
             <div class="overview-card">
                 <h3>Shipped Orders</h3>
-                <p>3,333</p>
+                <p>{{ $shippedOrders }}</p>
             </div>
             <div class="overview-card">
                 <h3>Categories</h3>
-                <p>12</p>
+                <p>{{ $totalCategories }}</p>
             </div>
             <div class="overview-card">
                 <h3>Customers</h3>
-                <p>456</p>
+                <p>{{ $totalCustomers }}</p>
             </div>
             <div class="overview-card">
                 <h3>Suppliers</h3>
-                <p>34</p>
+                <p>{{ $totalSuppliers }}</p>
             </div>
             <div class="overview-card">
                 <h3>Total Revenue</h3>
-                <p>Rp. 1.234.567</p>
+                <p>Rp. {{ number_format($totalRevenue, 0, ',', '.') }}</p>
             </div>
         </div>
 
@@ -116,6 +118,5 @@
         </table>
     </section>
 </body>
+
 </html>
-
-

@@ -10,7 +10,7 @@ class ShippingController extends Controller
     public function index()
     {
         $shippings = Shipping::all();
-        return view('shippings.index', compact('shippings'));
+        return view('dashboard.shipping', compact('shippings'));
     }
 
     public function store(Request $request)
